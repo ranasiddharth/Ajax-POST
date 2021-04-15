@@ -15,10 +15,13 @@ function func() {
         let myObj = JSON.parse(this.responseText);
         alert("JSON token is QpwL5tke4Pnpja7X4");
       }
+      if(this.status!==200 && this.readyState==4){
+        alert("You have put a bad request, pls try again");
+      }
     }
   }
   else{
-    alert("Invalid email or password. Pls write in format - test@test.com and catswalk as email and password");
+    alert("Invalid email or password. Pls write in format - email=test@test.com and password= alphanumerics or @,_,-");
    
   }
   Http.open ("POST", "https://reqres.in/api/login" , true);
